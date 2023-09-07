@@ -1,4 +1,4 @@
-import React from 'react'
+
 import NavBar from './navbar'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home'

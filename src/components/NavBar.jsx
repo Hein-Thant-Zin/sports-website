@@ -1,17 +1,23 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
-    <nav>
+   <nav className='border-b border-gray-900'>
+     <div className='container flex items-center justify-between py-4 mx-auto'>
           <Link to='/'>Home</Link>
           
-          <ul>
-              <li><Link to='/players'>Players</Link></li>
-              <li><Link to='/teams'>Teams</Link></li>
+          <ul className='flex items-center justify-between gap-10'>
+              <li>
+                <Link className='px-4 py-2' to='/players'>Players</Link>
+              </li>
+              <li>
+                <Link className='px-4 py-2' to='/teams'>Teams</Link>
+              </li>
           </ul>
           
-      </nav>     
+      </div> 
+   </nav>    
   )
 }
 

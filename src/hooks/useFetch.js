@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 const API = "https://api.ui.dev/hash-history-basketball-league";
-// const API ="https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague";
 export default function useFetch(path, method, body = "") {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);

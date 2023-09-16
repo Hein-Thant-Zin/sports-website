@@ -6,11 +6,11 @@ import useTeam from '../hooks/useTeam';
 import { slugify } from '../utilites/slugify';
 
 function useTeamPageData(teamId){
- const{response : teamNames,loading : teamNamesLoading}= useTeamNames();
+ const{response : teamNames,loading : teamNamesLoading} = useTeamNames();
 
- const{response : articles ,loading : articleLoading }= useTeamArticles(teamId);
+ const{response : articles ,loading : articleLoading } = useTeamArticles(teamId);
 
- const{response : team ,loading : teamLoading}= useTeam(teamId);
+ const{response : team ,loading : teamLoading} = useTeam(teamId);
 
  return{
   teamNames,

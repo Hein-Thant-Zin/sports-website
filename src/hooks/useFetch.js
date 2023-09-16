@@ -28,7 +28,7 @@ export default function useFetch(path, method, body = "") {
           setLoading(false);
         }
       })
-      .catch((error) => console.error("Something went wrong!!", error));
+      .catch((error) => console.warn("Something went wrong!!", error));
 
     //clean up function
     return () => controller.abort();

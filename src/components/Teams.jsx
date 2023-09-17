@@ -1,5 +1,4 @@
 import { Outlet, useParams } from "react-router-dom";
-import useTeam from "../hooks/useTeam"
 import SideBar from "./SideBar";
 import useTeamNames from "../hooks/useTeamNames";
 

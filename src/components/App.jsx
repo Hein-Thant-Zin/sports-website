@@ -6,6 +6,7 @@ import Players from './Players'
 import Teams from './Teams'
 import TeamsDetails from './TeamsDetails'
 import Player from './Player'
+import Team from './Team'
 
 const App = () => {
   return (
@@ -17,7 +18,9 @@ const App = () => {
         <Route path='/players' element={<Players />}>
           <Route path=':playerId' element={<Player />}/>
         </Route>
-        <Route path='/teams' element={<Teams/>} />
+        <Route path='/teams' element={<Teams />} >
+          <Route path=':teamId' element={<Team />} />
+        </Route>
         <Route path='/:teamId' element={<TeamsDetails/>} />
       </Routes>
       

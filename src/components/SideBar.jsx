@@ -1,0 +1,35 @@
+import { Link, useLocation } from "react-router-dom";
+import { slugify } from "../utilites/slugify";
+
+export default function SideBar({title,list}) {
+  return (
+    <aside className="min-w-[240px]">
+      <h3 className="header">{title}</h3>
+      <ul className="gap-4 mx-auto my-auto mt-4 space-y-2">
+        
+        {list.map((item) => (
+          <CustomLink key={item} to={`${slugify(item)}`}>
+            {item.toUpperCase()}
+          </CustomLink> 
+        ))}
+        
+      </ul>
+     </aside>
+   )
+}
+
+function CustomLink({ children, to }) {
+  
+  const location = useLocation();
+  const playerId = location.pathname.split('/')[2];
+  const matched = playerId === to;
+
+  return (
+    <li className="transition hover:font-bold">
+      <Link className={matched ? 'font-extrabold' : ''} to={{
+        pathname: to,
+        search: location.search,
+      }}>{children}{matched ? '✨' : null}</Link>
+    </li>
+  );
+}

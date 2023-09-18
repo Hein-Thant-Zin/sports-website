@@ -3,6 +3,7 @@ import { Link, Outlet, useLocation, useSearchParams } from "react-router-dom"
 import usePlayerNames from "../hooks/usePlayerNames";
 import { slugify } from "../utilites/slugify";
 import SideBar from "./SideBar";
+import { FadeLoader } from "react-spinners";
 
 
 const Players = () => {
@@ -22,7 +23,7 @@ const Players = () => {
   
   const { response: names, loading } = usePlayerNames(team);
    
-    if (loading) return null;
+    if (loading) return  <FadeLoader className="text-center" color="#ffffff" />;
   
   return (
     <section className="py-16">

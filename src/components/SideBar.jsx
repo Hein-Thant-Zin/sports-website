@@ -5,7 +5,7 @@ export default function SideBar({title,list}) {
   return (
     <aside className="min-w-[240px]">
       <h3 className="header">{title}</h3>
-      <ul className="gap-4 mx-auto my-auto mt-4 space-y-2">
+      <ul className="max-w-3xl gap-4 mx-auto mt-4 space-y-2">
         
         {list.map((item) => (
           <CustomLink key={item} to={`${slugify(item)}`}>

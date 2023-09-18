@@ -4,6 +4,7 @@ import useTeamNames from '../hooks/useTeamNames';
 import useTeamArticles from '../hooks/useTeamArticles';
 import useTeam from '../hooks/useTeam';
 import { slugify } from '../utilites/slugify';
+import { FadeLoader } from 'react-spinners';
 
 function useTeamPageData(teamId){
  const{response : teamNames,loading : teamNamesLoading} = useTeamNames();
@@ -24,9 +25,9 @@ const TeamsDetails = () => {
   const { teamId } = useParams();
   const {teamNames,articles,team,loading}=useTeamPageData(teamId);
   // console.log({teamNames});
-  if(loading)return <p className='pt-40 text-center'>Loading...</p>
+  if(loading)return <p className='pt-40 text-center'><FadeLoader className='text-center' color='#ffffff'/></p>
   if(!teamNames?.includes(teamId)){
-    return <p className='mt-5 text-center'>The {teamId} doesnt exist</p>
+    return <p className='mt-5 text-center'>The {teamId} does not exist</p>
   }
  
   return (

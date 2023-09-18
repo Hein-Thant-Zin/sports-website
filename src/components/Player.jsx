@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import usePlayer from '../hooks/usePlayer'
+import { FadeLoader } from "react-spinners";
 
 export default function Player() {
   const { playerId } = useParams();
@@ -7,7 +8,7 @@ export default function Player() {
   const { response : player, loading } = usePlayer(playerId);
 // console.log(response);
   // console.log({player});  
-  if (loading) return null; 
+  if (loading) return  <FadeLoader className="text-center" color="#ffffff" />; 
   if (!player) return null;
 
     
@@ -19,7 +20,9 @@ export default function Player() {
              <li>Team - <Link to={`/${player.teamId}`} >{player.teamId}</Link></li>
              <li>Position - <span>{player.position}</span></li>
              <li>PPG - <span>{player.ppg }</span></li>
-     </ul>
+      </ul>
+      
+      
     </section>
   )
 }

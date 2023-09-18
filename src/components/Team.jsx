@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useTeam from "../hooks/useTeam"
+import { FadeLoader } from "react-spinners";
 
 export default function Team() {
   const { teamId } = useParams();
@@ -7,7 +8,7 @@ export default function Team() {
   const { response : team, loading } = useTeam(teamId);
 // console.log(response);
 //   console.log({team});  
-  if (loading) return null; 
+  if (loading) return <FadeLoader className="text-center" color="#ffffff" />; 
 //   if (!team) return null;
     return (
         <section className="transition grow">
@@ -18,7 +19,11 @@ export default function Team() {
                 <li>Coach - <span>{team.coach }</span></li>
                 {/* <li>Win - <span>{team.wins }</span></li>
                 <li>Losses - <span>{team.losses }</span></li> */}
-            </ul>
+        </ul>
+        <h4 className="text-3xl font-bold text-center ">
+          <Link   to={`/${teamId}`}>{team.name}'s page</Link>
+        </h4>
+        
      
     </section>
     )

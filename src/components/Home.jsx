@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import useTeamNames from "../hooks/useTeamNames"
+import { FadeLoader } from "react-spinners";
 
 const Home = () => {
   const { response: teamNames=[], loading } = useTeamNames();
-  if (loading) return null;
+  if (loading) return  <FadeLoader className="text-center" color="#ffffff" />;
   // console.log(teamNames);
   return (
     <section className='py-16'>

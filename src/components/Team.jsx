@@ -20,8 +20,8 @@ export default function Team() {
                 {/* <li>Win - <span>{team.wins }</span></li>
                 <li>Losses - <span>{team.losses }</span></li> */}
         </ul>
-        <h4 className="text-3xl font-bold text-center ">
-          <Link   to={`/${teamId}`}>{team.name}'s page</Link>
+        <h4 className="mt-3 text-center ">
+          <Link className="btn"  to={`/${teamId}`}>{team.name}'s page</Link>
         </h4>
         
      

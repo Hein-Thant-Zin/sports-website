@@ -21,8 +21,8 @@ export default function SideBar({title,list}) {
 function CustomLink({ children, to }) {
   
   const location = useLocation();
-  const playerId = location.pathname.split('/')[2];
-  const matched = playerId === to;
+  const splitted = location.pathname.split('/');
+  const matched = splitted[splitted.length - 1] === to;
 
   return (
     <li className="transition hover:font-bold">

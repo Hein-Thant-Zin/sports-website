@@ -11,7 +11,7 @@ const Articles = () => {
     // console.log({articles});
     
   return (
-   <section className="py-16">
+   <section className="py-16 mx-4">
       <div className="container flex items-center gap-6">
         
         <SideBar title='Articles' list={articles.map((article)=>article.title)} />

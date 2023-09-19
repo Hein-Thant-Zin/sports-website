@@ -3,8 +3,8 @@ import useTeamNames from "../hooks/useTeamNames"
 import { FadeLoader } from "react-spinners";
 
 const Home = () => {
-  const { response: teamNames=[], loading } = useTeamNames();
-  if (loading) return  <FadeLoader className="text-center" color="#ffffff" />;
+  const { response: teamNames, loading } = useTeamNames();
+  if (loading) return  <FadeLoader className="container py-16 text-center" color="#ffffff" />;
   // console.log(teamNames);
   return (
     <section className='py-16'>
@@ -13,10 +13,10 @@ const Home = () => {
       
       <h3 className="mt-4 text-2xl text-center">Choose your team</h3>
 
-      <div className="grid max-w-xl grid-cols-3 gap-3 mx-auto my-4">
+      <div className="flex flex-wrap justify-center max-w-3xl gap-4 mx-auto my-4 ">
      { teamNames?.map((item) => (
-          <Link className="shadow-lg" key={item} to={`/${item}`}>
-            <article className="max-w-5xl px-4 py-2 transition rounded-md hover:bg-slate-500 bg-slate-400">
+          <Link className="shadow-lg flex-nowrap" key={item} to={`/${item}`}>
+            <article className="px-24 py-2 transition rounded-md hover:bg-slate-500 bg-slate-400">
               <p className="text-center">{item}</p>
             </article>
           </Link>

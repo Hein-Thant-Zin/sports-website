@@ -14,12 +14,12 @@ export default function Player() {
     
   return (
     <section className="grow">
-      <img className="w-32 mx-auto mt-5 transition border rounded-md shadow-sm aspect-square border-gray-50"  src={player.avatar} alt={`${player.name}'s avater`} />
-      <h2 className="mt-4 header">{player.name}</h2>
-      <ul className='mt-4 space-y-2 text-xl text-center'>
+      <img className="w-24 mx-auto mt-5 transition border rounded-md shadow-sm aspect-square border-gray-50"  src={player.avatar} alt={`${player.name}'s avater`} />
+      <h2 className=" header">{player.name}</h2>
+      <ul className='text-center '>
              <li>Team - <Link to={`/${player.teamId}`} >{player.teamId}</Link></li>
              <li>Position - <span>{player.position}</span></li>
-             <li>PPG - <span>{player.ppg }</span></li>
+             {/* <li>PPG - <span>{player.ppg }</span></li> */}
       </ul>
       
       

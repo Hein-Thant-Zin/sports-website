@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const API = "https://api.ui.dev/hash-history-basketball-league";
+
 export default function useFetch(path, method, body = "") {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(true);
